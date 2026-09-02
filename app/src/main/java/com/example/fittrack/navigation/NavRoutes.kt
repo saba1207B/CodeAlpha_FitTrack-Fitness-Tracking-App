@@ -20,12 +20,13 @@ sealed class Screen(
     data object Settings : Screen("settings", "Settings", Icons.Default.Settings)
 
     companion object {
-        val bottomNavItems = listOf(
-            Dashboard,
-            AddWorkout,
-            History,
-            Statistics,
-            Settings
-        )
+        val bottomNavItems: List<Screen>
+            get() = listOf(
+                Dashboard,
+                AddWorkout,
+                History,
+                Statistics,
+                Settings
+            )
     }
 }

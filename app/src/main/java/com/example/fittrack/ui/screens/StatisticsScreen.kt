@@ -17,7 +17,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DirectionsWalk
+import androidx.compose.material.icons.automirrored.filled.DirectionsWalk
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.Timer
@@ -104,7 +104,7 @@ fun StatisticsScreen(
                         title = "Weekly Steps",
                         value = numberFormat.format(uiState.weeklySummary.totalSteps),
                         subtitle = "Avg: ${numberFormat.format(uiState.weeklySummary.averageDailySteps)}/day",
-                        icon = Icons.Default.DirectionsWalk,
+                        icon = Icons.AutoMirrored.Filled.DirectionsWalk,
                         accentColor = StepAccentColor,
                         modifier = Modifier.weight(1f),
                         testTag = "weekly_steps_card"

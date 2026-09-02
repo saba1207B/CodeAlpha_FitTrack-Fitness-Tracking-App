@@ -17,8 +17,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.DirectionsWalk
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.DirectionsWalk
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.Timer
@@ -125,7 +125,7 @@ fun DashboardScreen(
                         title = "Steps",
                         value = numberFormat.format(uiState.todaySteps),
                         subtitle = "Goal: ${numberFormat.format(uiState.stepGoal)}",
-                        icon = Icons.Default.DirectionsWalk,
+                        icon = Icons.AutoMirrored.Filled.DirectionsWalk,
                         accentColor = StepAccentColor,
                         modifier = Modifier.weight(1f),
                         testTag = "metric_steps_card"

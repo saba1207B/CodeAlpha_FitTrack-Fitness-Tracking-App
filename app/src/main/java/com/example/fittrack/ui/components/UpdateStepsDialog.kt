@@ -12,7 +12,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DirectionsWalk
+import androidx.compose.material.icons.automirrored.filled.DirectionsWalk
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -60,7 +60,7 @@ fun UpdateStepsDialog(
         modifier = Modifier.testTag("update_steps_dialog"),
         icon = {
             Icon(
-                imageVector = Icons.Default.DirectionsWalk,
+                imageVector = Icons.AutoMirrored.Filled.DirectionsWalk,
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.size(32.dp)
