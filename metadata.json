@@ -1,0 +1,7 @@
+{
+  "name": "FitTrack",
+  "description": "A complete native Android fitness tracking app with step counting, workout logging, calorie tracking, weekly charts, and offline Room database persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

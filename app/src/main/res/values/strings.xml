@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FitTrack</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="add_workout_title">Add Workout</string>
+    <string name="edit_workout_title">Edit Workout</string>
+    <string name="history_title">Workout History</string>
+    <string name="statistics_title">Statistics</string>
+    <string name="settings_title">Settings</string>
+    <string name="greeting_good_day">Good day!</string>
+    <string name="metric_steps">Steps</string>
+    <string name="metric_calories">Calories</string>
+    <string name="metric_workout_time">Workout Time</string>
+    <string name="metric_workouts">Workouts</string>
+    <string name="update_steps">Update Steps</string>
+    <string name="save_workout">Save Workout</string>
+    <string name="empty_history_title">No workouts logged yet</string>
+    <string name="empty_history_desc">Start tracking your fitness by adding your first workout.</string>
+</resources>
