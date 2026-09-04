@@ -221,6 +221,18 @@ The installation was allowed to continue after the Play Protect scan.
 
 For Google's description of Play Protect scanning and its handling of apps installed outside Google Play, see the [official Google Play Protect help](https://support.google.com/googleplay/answer/2812853).
 
+## 📸 Play Protect Evidence
+
+The following screenshots are the actual Play Protect evidence uploaded to this repository. They document the installation scan and the resulting safe-to-install message on the test device.
+
+### Play Protect Scanning
+
+![Google Play Protect scanning the FitTrack APK](screenshots/play-protect-verification.png1.png)
+
+### Play Protect — App Looks Safe
+
+![Google Play Protect showing that FitTrack looks safe](screenshots/play-protect-verification.png2.png)
+
 ## 🔒 Privacy & Offline Design
 
 FitTrack is designed as an **offline-first** application.
@@ -252,18 +264,7 @@ The project is structured to support Android unit and Robolectric testing.
 
 ## 📸 Screenshots
 
-Add application screenshots to a `screenshots/` directory and link them here as the project evolves.
-
-Example:
-
-```text
-screenshots/
-├── dashboard.png
-├── add-workout.png
-├── history.png
-├── statistics.png
-└── settings.png
-```
+Application screenshots can be added to the `screenshots/` directory as the project evolves.
 
 ## 📦 APK
 
