@@ -120,7 +120,7 @@ FitTrack follows a modern Android architecture to keep the application maintaina
 ## 📂 Project Structure
 
 ```text
-FitTrack-Fitness-Tracking-App/
+CodeAlpha_FitTrack-Fitness-Tracking-App/
 ├── .github/
 │   └── workflows/
 │       └── build-apk.yml
