@@ -1,16 +1,24 @@
-name: Build Android APK
+name: Build Android Signed Release APK
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
-    name: Build Debug APK
+    name: Build Signed Release APK
     runs-on: ubuntu-latest
+
+    env:
+      KEYSTORE_PATH: ${{ github.workspace }}/ci-release.keystore
+      STORE_PASSWORD: ci-release-password
+      KEY_PASSWORD: ci-release-password
 
     steps:
       - name: Checkout Code
@@ -19,7 +27,7 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
       - name: Install Gradle 9.3.1
@@ -31,12 +39,31 @@ jobs:
       - name: Verify Gradle
         run: gradle --version
 
-      - name: Build Debug APK
-        run: gradle assembleDebug --stacktrace --no-daemon
+      - name: Generate CI release keystore
+        run: |
+          keytool -genkeypair -v \
+            -keystore "$KEYSTORE_PATH" \
+            -storepass "$STORE_PASSWORD" \
+            -alias upload \
+            -keypass "$KEY_PASSWORD" \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -dname "CN=CodeAlpha CI,O=CodeAlpha,C=IN"
 
-      - name: Upload APK Artifact
+      - name: Build signed release APK
+        run: gradle assembleRelease --stacktrace --no-daemon
+
+      - name: Verify APK signature
+        run: |
+          APK="app/build/outputs/apk/release/app-release.apk"
+          test -f "$APK"
+          $ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)/apksigner verify --verbose "$APK"
+
+      - name: Upload signed APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: fittrack-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: fittrack-signed-release-apk
+          path: app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
+          retention-days: 30
